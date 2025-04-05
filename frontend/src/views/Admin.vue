@@ -15,14 +15,27 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, defineAsyncComponent } from 'vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
 
 const tab = ref(0)
 
 const components = [
-  () => import('./admin/CourseAdmin.vue'),
-  () => import('./admin/InstructorAdmin.vue'),
-  () => import('./admin/TimeslotAdmin.vue')
+  defineAsyncComponent({
+    loader: () => import('./admin/CourseAdmin.vue'),
+    loadingComponent: LoadingSpinner,
+    delay: 200
+  }),
+  defineAsyncComponent({
+    loader: () => import('./admin/InstructorAdmin.vue'),
+    loadingComponent: LoadingSpinner,
+    delay: 200
+  }),
+  defineAsyncComponent({
+    loader: () => import('./admin/TimeslotAdmin.vue'),
+    loadingComponent: LoadingSpinner,
+    delay: 200
+  })
 ]
 
 const currentComponent = computed(() => components[tab.value])
