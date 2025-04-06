@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+.env
+.env.*
+
+# FastAPI virtual environment
+.venv/
+venv/
+pip-log.txt
+
+# Alembic migration cache
+alembic/versions/*.pyc
+alembic/versions/__pycache__/
+
+# Node/Vue
+node_modules/
+dist/
+*.log
+*.local
+.vite/
+pnpm-lock.yaml
+yarn.lock
+
+# Vite cache
+.vitepress/
+vite.config.ts
+
+# Docker
+*.pid
+*.tar
+*.bak
+docker-compose.override.yml
+**/.docker/
+
+# VS Code and IDE settings
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.cache/
+*.cover
+*.coverage
+htmlcov/
+test-results/
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+coverage/
